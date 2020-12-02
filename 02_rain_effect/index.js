@@ -1,4 +1,5 @@
 const cloudParticles = [];
+const rainCount = 15000;
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
   60,
@@ -55,6 +56,27 @@ const flash = new THREE.PointLight(0x062d89, 30, 500, 1.7);
 flash.position.set(200, 300, 100);
 scene.add(flash);
 
+const rainGeo = new THREE.Geometry();
+for (let i = 0; i < rainCount; i++) {
+  rainDrop = new THREE.Vector3(
+    Math.random() * 400 - 200,
+    Math.random() * 500 - 250,
+    Math.random() * 400 - 200
+  );
+  rainDrop.velocity = {};
+  rainDrop.velocity = 0;
+  rainGeo.vertices.push(rainDrop);
+}
+
+const rainMaterial = new THREE.PointsMaterial({
+  color: 0xaaaaaa,
+  size: 0.1,
+  transparent: true,
+});
+
+const rain = new THREE.Points(rainGeo, rainMaterial);
+scene.add(rain);
+
 const animate = () => {
   cloudParticles.forEach((p) => {
     p.rotation.z -= 0.002;
@@ -66,6 +88,18 @@ const animate = () => {
     }
     flash.power = 50 + Math.random() * 500;
   }
+
+  rainGeo.vertices.forEach((p) => {
+    p.velocity -= 0.1 + Math.random() * 0.1;
+    p.y += p.velocity;
+    if (p.y < -200) {
+      p.y = 200;
+      p.velocity = 0;
+    }
+  });
+  rainGeo.verticesNeedUpdate = true;
+  rain.rotation.y += 0.002;
+
   renderer.render(scene, camera);
   requestAnimationFrame(animate);
 };
