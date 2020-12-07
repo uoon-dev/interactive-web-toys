@@ -37,10 +37,37 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
-controls.update();
+controls.autoRotate = true;
+controls.autoRotateSpeed = 1.2;
+// gsap.to(camera.position, {
+//   duration: 7,
+//   x: camera.position.x - 300,
+//   y: camera.position.y + 100,
+//   onComplete: () => {
+//     gsap.to(camera.position, {
+//       duration: 7,
+//       x: camera.position.x + 300,
+//       y: camera.position.y + 100,
+//       onComplete: () => {
+//         gsap.to(camera.position, {
+//           duration: 7,
+//           x: 0,
+//           y: 0,
+//           onComplete: () => {},
+//         });
+//       },
+//     });
+//   },
+// });
+
+window.addEventListener('click', () => {
+  controls.autoRotate = false;
+  console.log('clicked..');
+  // gsap.killTweensOf(camera.position, 'x,y');
+});
 
 const godraysEffect = new POSTPROCESSING.GodRaysEffect(camera, circle, {
-  resolutionScale: 1,
+  resolutionScale: 2,
   density: 0.8,
   decay: 0.9,
   weight: 0.9,
@@ -67,6 +94,7 @@ composer.addPass(effectPass);
 
 const animate = () => {
   composer.render(0.1);
+  controls.update();
   requestAnimationFrame(animate);
 };
 
