@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Physics</title>
+    <style>
+      body {
+        background-color: black;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      canvas {
+        display: block;
+      }
+      #container {
+        width: 100vw;
+        height: 100vh;
+      }
+      audio {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <div class="book">
+      <div class="img"></div>
+      <div class="img"></div>
+      <div class="img"></div>
+      <div class="img"></div>
+      <div class="img"></div>
+      <div class="img"></div>
+      <div class="img"></div>
+      <div class="img"></div>
+      <div class="img"></div>
+      <div class="img"></div>
+      <div class="img"></div>
+    </div>
+    <div class="why-img-wrapper">
+      <div class="why-img"></div>
+    </div>
+    <div class="wallpaper-img" />
+
+    <audio
+      autoplay
+      loop
+      src="./why_so_serious_01.mp3"
+      type="audio/mp3"
+      class="audio-serious"
+    ></audio>
+    <audio src="./swoosh.mp3" type="audio/mp3" class="audio-swoosh"></audio>
+    <audio src="./evening.mp3" type="audio/mp3" class="audio-evening"></audio>
+    <audio
+      src="./jokers_laugh.mp3"
+      type="audio/mp3"
+      class="audio-laugh"
+    ></audio>
+    <!-- <audio src="./ladies.mp3" type="audio/mp3" class="audio-ladies"></audio> -->
+    <script src="js/app.js"></script>
+  </body>
+</html>

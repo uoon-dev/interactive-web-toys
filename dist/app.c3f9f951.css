@@ -1,0 +1,148 @@
+@keyframes tilt {
+  0% {
+    transform: rotate(0deg) skew(0deg) translate(-50%, -50%);
+  }
+  50% {
+    transform: rotate(5deg) skew(5deg) translate(-50%, -50%);
+  }
+  100% {
+    transform: rotate(-5deg) skew(-5deg) translate(-50%, -50%);
+  }
+}
+@keyframes scaleUpDown {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.005);
+  }
+}
+.book {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+  transition: opacity 2s ease-in-out;
+}
+
+.img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(/heath.1a95c480.png) no-repeat 50% 50%;
+  background-size: cover;
+  clip-path: circle(10% at 50% 50%);
+}
+
+.why-img-wrapper {
+  width: 835px;
+  height: 656px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -50%);
+  transition: opacity 2s ease-in-out;
+  animation: tilt 2s ease-in-out 2s infinite alternate;
+}
+.why-img-wrapper .why-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(0.8);
+  background: url(/why_so_serious.f26b0cc2.png) no-repeat 50% 50%;
+  background-size: contain;
+}
+
+.wallpaper-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  background: url(/joker_wallpaper.c7909142.jpg) no-repeat 50% 50%;
+  background-size: cover;
+  transition: opacity 5s ease-in-out;
+  animation: scaleUpDown 2s ease-in-out 1s infinite alternate;
+}
+
+.img:nth-child(1) {
+  clip-path: circle(5% at 50% 50%);
+  transform: rotate(127.0320984596deg);
+  z-index: 99;
+  transition: transform 1s ease-in-out, opacity 1.5s ease-in-out;
+}
+
+.img:nth-child(2) {
+  clip-path: circle(10% at 50% 50%);
+  transform: rotate(43.0425768709deg);
+  z-index: 98;
+  transition: transform 1s ease-in-out, opacity 1.5s ease-in-out;
+}
+
+.img:nth-child(3) {
+  clip-path: circle(15% at 50% 50%);
+  transform: rotate(40.4457777064deg);
+  z-index: 97;
+  transition: transform 1s ease-in-out, opacity 1.5s ease-in-out;
+}
+
+.img:nth-child(4) {
+  clip-path: circle(20% at 50% 50%);
+  transform: rotate(175.5496288028deg);
+  z-index: 96;
+  transition: transform 1s ease-in-out, opacity 1.5s ease-in-out;
+}
+
+.img:nth-child(5) {
+  clip-path: circle(25% at 50% 50%);
+  transform: rotate(5.411176241deg);
+  z-index: 95;
+  transition: transform 1s ease-in-out, opacity 1.5s ease-in-out;
+}
+
+.img:nth-child(6) {
+  clip-path: circle(30% at 50% 50%);
+  transform: rotate(195.3276705599deg);
+  z-index: 94;
+  transition: transform 1s ease-in-out, opacity 1.5s ease-in-out;
+}
+
+.img:nth-child(7) {
+  clip-path: circle(35% at 50% 50%);
+  transform: rotate(183.6346816813deg);
+  z-index: 93;
+  transition: transform 1s ease-in-out, opacity 1.5s ease-in-out;
+}
+
+.img:nth-child(8) {
+  clip-path: circle(40% at 50% 50%);
+  transform: rotate(103.8555755494deg);
+  z-index: 92;
+  transition: transform 1s ease-in-out, opacity 1.5s ease-in-out;
+}
+
+.img:nth-child(9) {
+  clip-path: circle(45% at 50% 50%);
+  transform: rotate(105.8334354694deg);
+  z-index: 91;
+  transition: transform 1s ease-in-out, opacity 1.5s ease-in-out;
+}
+
+.img:nth-child(10) {
+  clip-path: circle(50% at 50% 50%);
+  transform: rotate(128.9269014282deg);
+  z-index: 90;
+  transition: transform 1s ease-in-out, opacity 1.5s ease-in-out;
+}
+
+/*# sourceMappingURL=/app.c3f9f951.css.map */
